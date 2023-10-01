@@ -1,22 +1,15 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 export const Form = ({ fields, onSubmit, className, submitButtonLabel }) => {
   const handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault(); // para evitar que o formulário seja enviado
 
-    const formData = {}; // foi criado um objeto para armazenar os dados do formulário
-
-    fields.forEach((field) => {
-      if (field.type === 'checkbox') {
-        if (event.target[field.name].checked)
-          formData[field.name] = event.target[field.name].checked;
-        else {
-          formData[field.name] = false;
-        }
-      } else {
-        formData[field.name] = event.target[field.name].value; // Preenche o objeto com os valores digitados do formulário
-      }
-    });
+    const marca = event.target.marca.value;
+    const modelo = event.target.modelo.value;
+    const local = event.target.local.value;
+    const apelido = event.target.apelido.value;
+    const ativa = event.target.ativa.checked;
+    const formData = { marca, modelo, local, apelido, ativa };
 
     onSubmit(formData); // para chamar a função onSubmit com o objeto de dados do formulário
   };
@@ -36,7 +29,7 @@ export const Form = ({ fields, onSubmit, className, submitButtonLabel }) => {
           />
           {field.showCheckbox && (
             <label>
-              <input type="checkbox" name={`${field.name}_checkbox`} />{' '}
+              <input type="checkbox" name={`${field.name}_checkbox`} />{" "}
               {field.checkboxLabel}
             </label>
           )}
