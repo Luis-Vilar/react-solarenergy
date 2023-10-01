@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { Table, Button } from "react-bootstrap";
 
 export default function ListaUnidades({ mudarFormulario }) {
-
   const [data, setData] = useState([]);
 
   const fetchData = () => {
@@ -22,12 +21,14 @@ export default function ListaUnidades({ mudarFormulario }) {
     fetchData();
   }, []);
 
-  const editarUnidade = () => console.log("editarUnidade")
+  const editarUnidade = () => console.log("editarUnidade");
 
-  const removerUnidade = () => console.log("removerUnidade")
+  const removerUnidade = () => console.log("removerUnidade");
 
   return (
     <div>
+      <h3>Lista de unidades</h3>
+
       <Table className="my-4">
         <tbody>
           <tr>
@@ -45,12 +46,18 @@ export default function ListaUnidades({ mudarFormulario }) {
               <td>{item.marca}</td>
               <td>{item.modelo}</td>
               <td>
-                <Button variant="success" onClick={() => editarUnidade(item.id)}>
+                <Button
+                  variant="success"
+                  onClick={() => editarUnidade(item.id)}
+                >
                   Editar
                 </Button>
               </td>
               <td>
-                <Button variant="danger" onClick={() => removerUnidade(item.id)}>
+                <Button
+                  variant="danger"
+                  onClick={() => removerUnidade(item.id)}
+                >
                   Remover
                 </Button>
               </td>

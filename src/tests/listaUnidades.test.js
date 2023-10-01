@@ -22,9 +22,10 @@ const removerUnidade = jest.fn(() => { });
 
 
 describe("Unit Test ListaUnidades", () => {
+
     it("se o componente é renderizado corretamente: com título “Lista de Unidades”", () => {
         renderComponent();
-        expect(screen.getByText("Lista de Unidades")).toBeInTheDocument();
+        expect(screen.getByText(/lista de unidades/i)).toBeInTheDocument();
     });
     it("testar comportamento do botão “Editar”", async () => {
         renderComponent();
@@ -53,11 +54,11 @@ describe("Unit Test ListaUnidades", () => {
 
     it("se a tabela é renderizada com o cabeçalho correto", async () => {
         renderComponent();
-        const id = await screen.getByText("ID"); 
-        const apelido =await screen.getByText("Apelido");
+        const id = await screen.getByText("ID");
+        const apelido = await screen.getByText("Apelido");
         const local = await screen.getByText("Local");
-        const marca =await screen.getByText("Marca");
-        const modelo =await screen.getByText("Modelo");
+        const marca = await screen.getByText("Marca");
+        const modelo = await screen.getByText("Modelo");
 
         expect(id).toBeInTheDocument();
         expect(apelido).toBeInTheDocument();

@@ -64,49 +64,51 @@ export const LancamentoGeracaoMensal = () => {
 
   return (
     <div className={styles.formulario}>
-        <form onSubmit={handleSubmit}>
-          <div className={styles.gridContainer}>
-            <div className={styles.unidade}>
-              <label>Unidade Geradora</label>
-              <select
-                name=""
-                id=""
-                value={unidadeGeradora}
-                onChange={(e) => setUnidadeGeradora(e.target.value)}
-              >
-                <option value="">Escolha a unidade</option>
-                {unidades.map((unidade) => (
-                  <option key={unidade.id} value={unidade.id}>
-                    {unidade.apelido}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className={styles.data}>
-              <label htmlFor="">Mês/ano</label>
-              <input
-                type="month"
-                name="data"
-                value={data}
-                onChange={(e) => setData(e.target.value)}
-              />
-            </div>
-            <div className={styles.total}>
-              <label htmlFor="">Total kw gerado</label>
-              <input
-                type="number"
-                name="kw"
-                value={total}
-                onChange={(e) => setTotal(e.target.valueAsNumber)}
-              />
-            </div>
-            <div className={styles.botao}>
-              <button type="submit" className="btn btn-primary">
-                Cadastro
-              </button>
-            </div>
+      <form onSubmit={handleSubmit}>
+        <div className={styles.gridContainer}>
+          <div className={styles.unidade}>
+            <label>Unidade Geradora</label>
+            <select
+              name="unidades"
+              id="unidades"
+              value={unidadeGeradora}
+              onChange={(e) => setUnidadeGeradora(e.target.value)}
+            >
+              <option value="">Escolha a unidade</option>
+              {unidades.map((unidade) => (
+                <option key={unidade.id} value={unidade.id}>
+                  {unidade.apelido}
+                </option>
+              ))}
+            </select>
           </div>
-        </form>
-      </div>
+          <div className={styles.data}>
+            <label htmlFor="data">Mês/ano</label>
+            <input
+              id="data"
+              type="month"
+              name="data"
+              value={data}
+              onChange={(e) => setData(e.target.value)}
+            />
+          </div>
+          <div className={styles.total}>
+            <label htmlFor="kw">Total kw gerado</label>
+            <input
+              id="kw"
+              type="number"
+              name="kw"
+              value={total}
+              onChange={(e) => setTotal(e.target.valueAsNumber)}
+            />
+          </div>
+          <div className={styles.botao}>
+            <button type="submit" className="btn btn-primary">
+              Cadastro
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
   );
 };
