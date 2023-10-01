@@ -67,7 +67,7 @@ export const LancamentoGeracaoMensal = () => {
       <form onSubmit={handleSubmit}>
         <div className={styles.gridContainer}>
           <div className={styles.unidade}>
-            <label>Unidade Geradora</label>
+            <label htmlFor= "unidades">Unidade Geradora</label>
             <select
               name="unidades"
               id="unidades"

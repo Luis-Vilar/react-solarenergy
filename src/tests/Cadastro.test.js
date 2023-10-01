@@ -20,7 +20,7 @@ describe('Unit tests for Cadastro component', () => {
     jest.clearAllMocks();
   }
   );
-  it('se o componente é renderizado corretamente: com título “Cadastro de Unidade Gerada”', async () => {
+  it('se o componente é renderizado corretamente: com título “Cadastro de Unidade Geradora', async () => {
     renderComponent();
     const titulo = await screen.getByText('Cadastro de Unidade Geradora');
     expect(titulo).toBeInTheDocument();
@@ -32,12 +32,9 @@ describe('Unit tests for Cadastro component', () => {
     expect(mudarFormulario).not.toHaveBeenCalled();
 
   });
-  it.skip("se preencher todos os campos obrigatórios, ao clicar em “Salvar”, deverá chamar a função de abrir/fechar formulário com a opção correta", async () => {
-    render(<CadastroUnidade mudarFormulario={mudarFormulario} />);
-    screen.debug();
-  });
-it.todo('se preencher todos os campos obrigatórios, ao clicar em “Salvar”, deverá limpar as informações do formulário')
-it.todo('ao clicar no checkbox seu estado deve ser alterado entre checado e não checado')
+  it.todo("se preencher todos os campos obrigatórios, ao clicar em “Salvar”, deverá chamar a função de abrir/fechar formulário com a opção correta");
+  it.todo('se preencher todos os campos obrigatórios, ao clicar em “Salvar”, deverá limpar as informações do formulário')
+  it.todo('ao clicar no checkbox seu estado deve ser alterado entre checado e não checado')
 });
 
 
