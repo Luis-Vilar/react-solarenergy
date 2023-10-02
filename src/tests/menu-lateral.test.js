@@ -19,7 +19,7 @@ describe('Unit tests for MenuLateral component', () => {
 
 
 
-    it('Should be render one logo and three links', () => {
+    it('se o componente é renderizado corretamente: com logo e 3 botões/links', () => {
 
         renderWithRouter(<MenuLateral />, { route: '/dashboard' })
 
@@ -27,7 +27,7 @@ describe('Unit tests for MenuLateral component', () => {
         expect(screen.getAllByRole('link')).toHaveLength(3);
     });
 
-    it('Should be render with the dashboard default button selected and the others not selected.', () => {
+    it('se o botão da rota default inicia selecionado e os demais não selecionados', () => {
 
         const { container } = renderWithRouter(<MenuLateral />, { route: '/dashboard' })
 
@@ -49,7 +49,7 @@ describe('Unit tests for MenuLateral component', () => {
 
     });
 
-    it('Should redirect to the respective page when one of the three buttons is clicked', async () => {
+    it('se a página é alterada corretamente quando clica em algum botão', async () => {
 
         const { user } = renderWithRouter(<MenuLateral />, { route: '/dashboard' })
         const btnUnidades = screen.getByRole('link', { name: /unidades/i });
@@ -63,7 +63,7 @@ describe('Unit tests for MenuLateral component', () => {
 
     });
 
-    it('Should return to the default page when the logo is clicked', async () => {
+    it('se a página é alterada para a default quando clica no logo', async () => {
         const { user } = renderWithRouter(<MenuLateral />, { route: '/dashboard' })
 
         const logo = screen.getByRole('img', { name: /logo/i });
